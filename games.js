@@ -23,6 +23,10 @@ Apps.games = {
      { name: 'Slope', url: 'https://slope-game-fsq3.vercel.app/' },
     { name: 'Escape Road 2', url: 'https://escaperoad2online-github-io.vercel.app/' },
     { name: 'Bongo Cat', url: 'https://bongo-cat-lyart.vercel.app/' },
+      { name: 'Snow Rider 3D', url: 'https://snow-rider3-d-five.vercel.app/' },
+      { name: 'OvO (Test)', url: 'https://ovo-game.vercel.app/' },
+      { name: 'Small World Cup', url: 'https://a-small-world-cup-eight.vercel.app/' },
+      { name: 'Baldis basics', url: 'https://baldis-basics-coral.vercel.app/' },
     
   ],
   content() {
