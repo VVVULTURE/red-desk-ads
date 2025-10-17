@@ -1,0 +1,239 @@
+:root {
+  --primary: #FF2E2E;
+  --accent: #FF2E2E;
+  --bg: #101018;
+  --card: #18181F;
+  --button: #232323;
+  --button-hover: #FF2E2E;
+  --text: #FFFFFF;
+  --window-bg: #22222B;
+  --window-active: #FF2E2E;
+  --window-inactive: #44445A;
+  --taskbar-bg: #18181FEE;
+  --tray-bg: #18181FCC;
+  --shadow: 0 4px 24px rgba(255,46,46,0.08);
+  --radius: 12px;
+  --wallpaper: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj2QZ2sp7RdgZEnjzWwEXCsdWgsofXNWRlRCnUCuiIoKFYCKyeuE8-dpctvtMJKGqbradiEaboGsp3xfxZvwo45lZHuSIEJZB2LzBlnMkYgrDayydDZp0u_ceo-8VlnXn2KT-Ec3CkavhXJZjxFdlxeG0KeRuV5wA_GGqFeJG1VME2yzcUorI0cnuUrKT2l/s320/9e0079a0-9d71-4ebb-bc5d-f043424d2c6d_768x576.jpg');
+    --transition: cubic-bezier(.5,.1,.1,1);
+}
+
+#desktop-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background-image: var(--wallpaper);
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  transition: background-image 1s var(--transition);
+}
+
+#desktop {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Windows container, don't overlap taskbar/tray */
+#windows {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: calc(100vh - 48px);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.os-window {
+  position: absolute;
+  background: var(--window-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--text);
+  min-width: 260px;
+  min-height: 160px;
+  max-width: 96vw;
+  max-height: calc(92vh - 48px);
+  resize: both;
+  overflow: hidden;
+  z-index: 3;
+  transition: box-shadow 0.3s, border 0.3s, transform 0.5s var(--transition);
+  pointer-events: auto;
+}
+.os-window.active { border: 2px solid var(--window-active); }
+.os-window.inactive { border: 2px solid var(--window-inactive); }
+.os-window-header {
+  background: var(--card);
+  padding: 0.5rem 1rem;
+  cursor: move;
+  display: flex; align-items: center; justify-content: space-between;
+  border-radius: var(--radius) var(--radius) 0 0;
+  user-select: none;
+}
+.os-window-title { font-family: 'Orbitron', Arial, sans-serif; font-size: 1.1rem; }
+.os-window-controls button {
+  background: transparent; border: none; color: var(--accent);
+  font-size: 1.2rem; margin-left: 0.5rem; cursor: pointer;
+  transition: color 0.2s;
+}
+.os-window-controls button:hover { color: var(--window-active); }
+.os-window-content { padding: 1rem; height: calc(100% - 38px); overflow: auto; }
+
+/* --- Taskbar and Tray --- */
+.taskbar {
+  position: fixed; bottom: 0; left: 0; width: calc(100vw - 180px); height: 48px;
+  background: var(--taskbar-bg);
+  display: flex; align-items: center; justify-content: flex-start;
+  z-index: 10;
+  box-shadow: 0 -2px 24px var(--shadow);
+  border-radius: var(--radius) 0 0 0;
+  padding: 0 1.2rem;
+}
+.taskbar-apps {display: flex; gap: 1rem;}
+.taskbar-app {background: none; border: none; color: var(--primary); font-size: 1.4rem; cursor: pointer; margin: 0 0.2rem;}
+.taskbar-app.running {color: var(--accent);}
+.taskbar-start {font-family: 'Orbitron'; font-size: 1.2rem; background: var(--accent); color: #fff; border-radius: var(--radius); padding: 0.6rem 1rem; cursor: pointer;}
+.tray {
+  position: fixed; bottom: 0; right: 0; width: 180px; height: 48px;
+  background: var(--tray-bg);
+  display: flex; align-items: center; gap: 1rem; justify-content: flex-end;
+  z-index: 11;
+  border-radius: 0 var(--radius) 0 0;
+  padding: 0 1.2rem;
+}
+.tray-clock {font-family: 'Orbitron'; font-size: 1.1rem; color: var(--accent);}
+.tray-icon {font-size: 1.3rem; color: var(--primary); margin-left: 0.6rem;}
+/* Context menu */
+#context-menu {
+  position: fixed;
+  display: none;
+  z-index: 9999;
+  background: var(--card);
+  color: var(--text);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  min-width: 160px;
+  padding: 0.4rem 0;
+}
+.context-menu-item {
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.18s;
+}
+.context-menu-item:hover {
+  background: var(--button-hover);
+  color: #fff;
+}
+.game-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.game-btn {
+  background: var(--button);
+  color: var(--primary);
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-size: 1.2rem;
+  padding: 1.4rem 2.2rem;
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, transform 0.22s;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+.game-btn:hover {
+  background: var(--button-hover);
+  color: var(--text);
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 6px 28px var(--shadow);
+}
+/* Animations, drag-drop, snap, and more apps can be added here */
+@media (max-width: 700px) {
+  .taskbar { width: 100vw; height: 38px; padding: 0 0.4rem; border-radius: var(--radius) var(--radius) 0 0;}
+  .tray { width: 100vw; height: 38px; left: 0; right: 0; bottom: 38px; border-radius: 0 0 var(--radius) var(--radius;}
+  #windows { height: calc(100vh - 76px); }
+  .os-window { min-width: 180px; max-height: calc(92vh - 76px);}
+  .game-btns {gap: 1rem;}
+}
+/* ===== Taskbar Google Form emoji: size + spacing to match other icons ===== */
+
+/* Ensure the taskbar is a flex container so spacing works predictably */
+#taskbar, .taskbar, #taskbar-container, .taskbar-container {
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Right-side wrapper: push to far right and match spacing behavior */
+.taskbar-right {
+  margin-left: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;        /* even spacing between icons in this area */
+  padding-right: 8px !important; /* match tray padding */
+}
+
+/* Anchor wrapper: remove default styles and set size to match other icons */
+/* Adjust the width/height value if your other icons are larger (e.g., 40px) */
+a#taskbar-form-btn,
+.taskbar-right > a#taskbar-form-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;    /* icon container width — tweak if needed */
+  height: 36px !important;   /* icon container height — tweak if needed */
+  padding: 0 !important;
+  margin: 0 6px !important;  /* horizontal spacing consistent with other icons */
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  outline: none !important;
+  color: inherit !important;
+  line-height: 1 !important;
+  border-radius: 6px !important; /* same rounding as other icons */
+}
+
+/* Emoji sizing and centering */
+a#taskbar-form-btn > .taskbar-form-emoji,
+.taskbar-form-emoji {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  font-size: 20px !important;  /* emoji size — increase (22-24) if other icons are bigger */
+  line-height: 1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Hover effect consistent with other icons */
+a#taskbar-form-btn:hover > .taskbar-form-emoji {
+  background: rgba(0,0,0,0.04) !important;
+  border-radius: 6px !important;
+}
+
+/* Focus ring: visible but not a white box */
+a#taskbar-form-btn:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(21,156,228,0.28) !important;
+  border-radius: 8px !important;
+}
+
+/* Fallback for aggressive global rules that might add backgrounds to anchors */
+#taskbar .taskbar-right > a#taskbar-form-btn,
+.taskbar .taskbar-right > a#taskbar-form-btn {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
