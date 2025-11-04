@@ -26,7 +26,7 @@ Apps.games = {
       { name: 'Snow Rider 3D', url: 'https://snow-rider3-d-five.vercel.app/' },
       { name: 'OvO (Test)', url: 'https://ovo-game.vercel.app/' },
       { name: 'Small World Cup', url: 'https://a-small-world-cup-eight.vercel.app/' },
-      { name: 'Baldis basics', url: 'https://baldis-basics-coral.vercel.app/' },
+      { name: 'Vex 4', url: 'https://vex4-xi.vercel.app/' },
     
   ],
   content() {
