@@ -27,6 +27,8 @@ Apps.games = {
       { name: 'OvO (Test)', url: 'https://ovo-game.vercel.app/' },
       { name: 'Small World Cup', url: 'https://a-small-world-cup-eight.vercel.app/' },
       { name: 'Vex 4', url: 'https://vex4-xi.vercel.app/' },
+      { name: 'Vex 5', url: 'https://vex5-sigma.vercel.app/' },
+      { name: 'Vex 6', url: 'https://vex6-nine.vercel.app/' },
     
   ],
   content() {
