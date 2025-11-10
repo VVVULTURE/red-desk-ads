@@ -21,16 +21,15 @@ Apps.games = {
     { name: 'Rooftop Snipers', url: 'https://rooftop-snipers-rose.vercel.app/' },
      { name: 'GunSpin', url: 'https://gun-spin-dusky.vercel.app/' },
      { name: 'Slope', url: 'https://slope-game-fsq3.vercel.app/' },
-    { name: 'Escape Road 2', url: 'https://escaperoad2online-github-io.vercel.app/' },
     { name: 'Bongo Cat', url: 'https://bongo-cat-lyart.vercel.app/' },
       { name: 'Snow Rider 3D', url: 'https://snow-rider3-d-five.vercel.app/' },
-      { name: 'OvO (Test)', url: 'https://ovo-game.vercel.app/' },
       { name: 'Small World Cup', url: 'https://a-small-world-cup-eight.vercel.app/' },
       { name: 'Vex 4', url: 'https://vex4-xi.vercel.app/' },
       { name: 'Vex 5', url: 'https://vex5-sigma.vercel.app/' },
       { name: 'Vex 6', url: 'https://vex6-nine.vercel.app/' },
      { name: 'PolyTrack', url: 'https://pelytrack.vercel.app/' },
-      { name: 'Block Blast', url: 'https://block-blast-tau.vercel.app/' },
+      { name: 'Block Blast', url: 'https://block-blast-tau.vercel.app/' }
+      { name: 'Hollow Knight', url: 'https://hollow-knight-zeta.vercel.app/' }
     
   ],
   content() {
