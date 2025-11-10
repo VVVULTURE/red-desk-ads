@@ -294,7 +294,24 @@ Apps.fileexplorer = {
   openFile(idx) {
     const file = this.files[idx];
     if (file && file.url) {
-      window.open(file.url, '_blank'); // Redirects out of OS to open in normal tab
+  try {
+  // If it's an HTML file or webpage, fetch it and open it as a blob in a new tab
+  if (/\.html?$/.test(file.url) || /^https?:\/\//i.test(file.url)) {
+    fetch(file.url)
+      .then(r => r.text())
+      .then(html => {
+        const blob = new Blob([html], { type: 'text/html' });
+        const blobUrl = URL.createObjectURL(blob);
+        window.open(blobUrl, '_blank'); // Open in blob: tab
+      })
+      .catch(() => window.open(file.url, '_blank')); // fallback
+  } else {
+    window.open(file.url, '_blank'); // for non-HTML files
+  }
+} catch (e) {
+  window.open(file.url, '_blank');
+}
+
     }
   }
 };
