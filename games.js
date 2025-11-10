@@ -27,7 +27,8 @@ Apps.games = {
       { name: 'Vex 5', url: 'https://vex5-sigma.vercel.app/' },
       { name: 'Vex 6', url: 'https://vex6-nine.vercel.app/' },
      { name: 'PolyTrack', url: 'https://pelytrack.vercel.app/' },
-      { name: 'Block Blast', url: 'https://block-blast-tau.vercel.app/' } { name: 'Hollow Knight', url: 'https://hollow-knight-zeta.vercel.app/' }
+      { name: 'Block Blast', url: 'https://block-blast-tau.vercel.app/' } 
+ 
     
      ],
   content() {
