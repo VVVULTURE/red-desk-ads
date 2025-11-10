@@ -26,10 +26,7 @@ Apps.games = {
       { name: 'Small World Cup', url: 'https://a-small-world-cup-eight.vercel.app/' },
       { name: 'Vex 4', url: 'https://vex4-xi.vercel.app/' },
       { name: 'Vex 5', url: 'https://vex5-sigma.vercel.app/' },
-      { name: 'Vex 6', url: 'https://vex6-nine.vercel.app/' },
-     { name: 'PolyTrack', url: 'https://pelytrack.vercel.app/' },
-      { name: 'Block Blast', url: 'https://block-blast-tau.vercel.app/' }
-      { name: 'Hollow Knight', url: 'https://hollow-knight-zeta.vercel.app/' }
+    
     
   ],
   content() {
