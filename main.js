@@ -135,12 +135,24 @@ Apps.executor = {
     }
     const reader = new FileReader();
     reader.onload = function(e) {
-      const html = e.target.result;
-      const appInfo = {
-        title: file.name || 'Executed File',
-        content: () => `<iframe srcdoc="${html.replace(/"/g, '&quot;')}" style="width:100%;height:100%;border:none;" sandbox="allow-scripts allow-same-origin"></iframe>`
-      };
-      const win = WindowManager.create(appInfo);
+    const html = e.target.result;
+
+// Create a Blob and open it in a new tab so it appears as blob:<origin>/<id>
+try {
+  const blob = new Blob([html], { type: "text/html" });
+  const blobUrl = URL.createObjectURL(blob);
+
+  // Open the blob in a new browser tab
+  window.open(blobUrl, "_blank");
+} catch (err) {
+  // Fallback: still open in an internal window if something fails
+  const appInfo = {
+    title: file.name || "Executed File",
+    content: () => `<iframe srcdoc="${html.replace(/"/g, '&quot;')}" style="width:100%;height:100%;border:none;" sandbox="allow-scripts allow-same-origin"></iframe>`
+  };
+  WindowManager.create(appInfo);
+}
+
       const maxBtn = win.querySelector('button[title="Maximize"]');
       WindowManager.maximize(maxBtn);
       status.textContent = "File executed in window.";
