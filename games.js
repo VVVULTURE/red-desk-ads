@@ -14,6 +14,7 @@ Apps.games = {
     { name: 'Eaglercraft 1.12', url: 'https://math-class-school.vercel.app' },
     { name: 'House of Hazards', url: 'https://house-of-hazards-ashy.vercel.app' },
     { name: 'Dadish 1', url: 'https://dadish.vercel.app' },
+    {name: 'Hollow Knight', url: 'https://hollow-knight-zeta.vercel.app' },
     { name: 'Dadish 2', url: 'https://dadish2.vercel.app/' },
     { name: 'Stickman hook', url: 'https://stickman-hook-five.vercel.app' },
     { name: 'Bitlife', url: 'https://bitlife1.vercel.app' },
