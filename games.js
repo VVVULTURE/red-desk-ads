@@ -28,6 +28,8 @@ Apps.games = {
       { name: 'Vex 6', url: 'https://vex6-nine.vercel.app/' },
      { name: 'PolyTrack', url: 'https://pelytrack.vercel.app/' },
       { name: 'Block Blast', url: 'https://block-blast-tau.vercel.app/' },
+      { name: 'Amazing Strange Rope Police', url: 'https://amazing-strange-rope-police-eight.vercel.app/' },
+    
  
     
      ],
