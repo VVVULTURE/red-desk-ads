@@ -16,7 +16,7 @@ window.Desktop = {
     });
   },
   setWallpaper(url) {
-    this.wallpaper = `url('${url}')`;
+    this.wallpaper = `url('${https://wallpaperaccess.com/full/7868589.png}')`;
     document.getElementById('desktop-bg').style.backgroundImage = this.wallpaper;
     localStorage.setItem('wallpaper', this.wallpaper);
   },
