@@ -29,6 +29,8 @@ Apps.games = {
      { name: 'PolyTrack', url: 'https://pelytrack.vercel.app/' },
       { name: 'Block Blast', url: 'https://block-blast-tau.vercel.app/' },
       { name: 'Amazing Strange Rope Police', url: 'https://amazing-strange-rope-police-eight.vercel.app/' },
+     { name: 'Slowroads.io', url: 'https://slow-roads-psi.vercel.app/' },
+     { name: 'Geometrical Sprint', url: 'https://dashmetry-gilt.vercel.app/' },
     
  
     
