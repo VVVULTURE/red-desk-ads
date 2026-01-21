@@ -30,7 +30,8 @@ Apps.games = {
       { name: 'Block Blast', url: 'https://block-blast-tau.vercel.app/' },
       { name: 'Amazing Strange Rope Police', url: 'https://amazing-strange-rope-police-eight.vercel.app/' },
      { name: 'Slowroads.io', url: 'https://slow-roads-psi.vercel.app/' },
-     { name: 'Geometrical Sprint', url: 'https://dashmetry-gilt.vercel.app/' },
+     { name: 'Geometry Dash (Scratch)', url: 'https://gd-ten-jet.vercel.app/' },
+    { name: 'Flappy Bird', url: 'https://flappy-bird-three-nu.vercel.app/' },
     
  
     
