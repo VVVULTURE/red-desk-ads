@@ -34,6 +34,7 @@ Apps.games = {
     { name: 'Flappy Bird', url: 'https://flappy-bird-three-nu.vercel.app/' },
      { name: 'EmulatorJS', url: 'https://demo.emulatorjs.org' },
         { name: 'Bromine', url: 'https://bromine-mu.vercel.app/' },
+        { name: 'Fancade (beta)', url: 'https://fancade-gules.vercel.app/' },
     
  
     
