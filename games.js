@@ -19,6 +19,7 @@ Apps.games = {
     { name: 'Bitlife', url: 'https://bitlife1.vercel.app' },
     { name: 'Getaway Shootout', url: 'https://getaway-shootout-ten.vercel.app/' },
     { name: 'Rooftop Snipers', url: 'https://rooftop-snipers-rose.vercel.app/' },
+        { name: 'Basket Random', url: 'https://basket-random-ph7z.vercel.app/' },
      { name: 'GunSpin', url: 'https://gun-spin-dusky.vercel.app/' },
      { name: 'Slope', url: 'https://slope-game-fsq3.vercel.app/' },
     { name: 'Bongo Cat', url: 'https://bongo-cat-lyart.vercel.app/' },
@@ -32,6 +33,7 @@ Apps.games = {
      { name: 'Geometry Dash (Scratch)', url: 'https://gd-ten-jet.vercel.app/' },
     { name: 'Flappy Bird', url: 'https://flappy-bird-three-nu.vercel.app/' },
      { name: 'EmulatorJS', url: 'https://demo.emulatorjs.org' },
+        { name: 'Bromine', url: 'https://bromine-mu.vercel.app/' },
     
  
     
